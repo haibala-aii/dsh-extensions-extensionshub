@@ -1,0 +1,3 @@
+- insert:
+    - id: ui-extensions
+      name: dsh-ui-extensions

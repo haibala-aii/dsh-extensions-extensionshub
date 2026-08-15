@@ -1,0 +1,45 @@
+.item {
+  flex: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 34px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--dsw-alias-label-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+  text-align: left;
+}
+
+.item:hover {
+  background: var(--dsw-alias-interactive-bg-hover);
+}
+
+.current {
+  background: var(--dsw-alias-bg-multi-select);
+}
+
+.rail {
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  gap: 0;
+  justify-content: center;
+}
+
+.label {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.rail .label {
+  display: none;
+}
