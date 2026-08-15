@@ -2,7 +2,7 @@
 
 English | [中文](README.zh.md)
 
-A DeepSeek Harness web plugin that adds an **Extensions** row to the sidebar and a center-column catalog of GitHub repositories tagged [`dsh-plugin`](https://github.com/topics/dsh-plugin). The page copies an official install command; it does not run `dsh plugin add` inside the browser.
+A DeepSeek Harness web plugin that lists GitHub repositories tagged [`dsh-plugin`](https://github.com/topics/dsh-plugin). The page copies an official install command; it does not run `dsh plugin add` inside the browser.
 
 ## Install
 
@@ -12,16 +12,16 @@ dsh plugin --profile web add github:haibara757/dsh-ui-extensions
 
 Restart `dsh web` (or the desktop shell) after the add succeeds. This repository ships prebuilt `lib/`, so the first install does not need a pnpm `allowBuilds` entry.
 
-## Host requirement
+## Where it appears
 
-The plugin registers into two host slots:
+A third-party bundle cannot add new holes to AppFrame or SidebarRoot. Those parents alone may declare `sidebar.nav` and `shell.surface`.
 
-- `sidebar.nav` — the additive sidebar row
-- `shell.surface` with key `extensions` — the catalog page
+This plugin therefore:
 
-Those slots exist in a Harness checkout that already has the shell-surface work. **Official `0.1.0-rc.5` does not declare them.** On that release the bundle installs, but no Extensions row appears.
+- occupies `sidebar.nav` + `shell.surface` when the host already declares them
+- otherwise occupies the official additive seats: a **Extensions** row on `sidebar.footer.action` (above Settings) and a full-frame `shell.overlay` catalog
 
-`openSurface('extensions')` must also exist on the layout service. Without it, the nav row cannot switch the center column.
+Stock DeepSeek Harness `0.1.0-rc.5` has the official seats, so the GitHub install works there without a forked shell.
 
 ## What the page does
 

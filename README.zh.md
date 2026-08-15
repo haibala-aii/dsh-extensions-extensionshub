@@ -2,7 +2,7 @@
 
 [English](README.md) | 中文
 
-DeepSeek Harness 的 Web 插件：在侧栏加入「扩展」一行，并在主区列出打了 [`dsh-plugin`](https://github.com/topics/dsh-plugin) 标签的 GitHub 仓库。页面只复制官方安装命令，不会在浏览器里执行 `dsh plugin add`。
+DeepSeek Harness 的 Web 插件：列出打了 [`dsh-plugin`](https://github.com/topics/dsh-plugin) 标签的 GitHub 仓库。页面只复制官方安装命令，不会在浏览器里执行 `dsh plugin add`。
 
 ## 安装
 
@@ -12,16 +12,16 @@ dsh plugin --profile web add github:haibara757/dsh-ui-extensions
 
 添加成功后重启 `dsh web`（或桌面壳）。本仓库带有预构建的 `lib/`，首次安装不需要在 profile 里写 pnpm `allowBuilds`。
 
-## 宿主要求
+## 出现在哪
 
-插件注册到两个宿主插槽：
+第三方 bundle 不能给 AppFrame 或 SidebarRoot 开新洞。只有这两个父组件能声明 `sidebar.nav` 和 `shell.surface`。
 
-- `sidebar.nav` — 侧栏附加导航行
-- `shell.surface`，key 为 `extensions` — 目录页
+因此本插件会：
 
-这两个插槽只存在于已经做了壳换面改造的 Harness 检出里。**官方 `0.1.0-rc.5` 没有声明它们。** 在该版本上包能装上，但侧栏不会出现「扩展」。
+- 宿主已经声明这两席时，占用 `sidebar.nav` + `shell.surface`
+- 否则占用官方可叠加席位：设置上方的 `sidebar.footer.action`「扩展」行，以及铺满窗口的 `shell.overlay` 目录
 
-布局服务还需要 `openSurface('extensions')`。没有它，导航行无法切换主区。
+原版 DeepSeek Harness `0.1.0-rc.5` 已有这两处官方席位，所以 GitHub 安装不用分叉外壳。
 
 ## 页面做什么
 

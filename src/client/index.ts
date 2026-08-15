@@ -7,7 +7,10 @@ import type {} from '@deepseek-ai/dsh-client-ui-layout/client'
 import type {} from '@deepseek-ai/dsh-client-ui-sidebar/client'
 import { fetchPluginCatalog } from './catalog.ts'
 import { ExtensionCenter } from './ExtensionCenter.tsx'
+import { ExtensionFooter } from './ExtensionFooter.tsx'
 import { ExtensionNav } from './ExtensionNav.tsx'
+import { ExtensionOverlay } from './ExtensionOverlay.tsx'
+import { createExtensionsStore } from './store.ts'
 import { EXTENSION_SURFACE_ID } from './surface-id.ts'
 import { en, zh, type ExtensionsKey } from './locales.ts'
 
@@ -27,11 +30,17 @@ const NS = 'extensions'
 export const inject = ['slots', 'locale']
 
 /**
- * Register the Extensions nav row and the extension-center surface.
+ * Register the Extensions entry and catalog.
+ * Prefers `sidebar.nav` + `shell.surface` when the host declares them.
+ * Otherwise occupies the official additive seats `sidebar.footer.action`
+ * and `shell.overlay` — a third-party bundle cannot add children to
+ * AppFrame or SidebarRoot.
  * @param ctx - client root context.
  */
 export function apply(ctx: ClientContext): void {
   ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'ui-extensions: dictionaries')
+  const store = createExtensionsStore()
+  const loadCatalog = () => fetchPluginCatalog()
 
   ctx.slots.inject('sidebar.nav', () => ctx.slots.register({
     name: 'sidebar.nav',
@@ -43,6 +52,27 @@ export function apply(ctx: ClientContext): void {
     name: 'shell.surface',
     key: EXTENSION_SURFACE_ID,
     locale: NS,
-    inject: () => ({ loadCatalog: () => fetchPluginCatalog() }),
+    inject: () => ({ loadCatalog }),
   }, ExtensionCenter))
+
+  ctx.slots.inject('sidebar.footer.action', () => {
+    if (ctx.slots.spec('sidebar.nav') !== undefined) return () => {}
+    return ctx.slots.register({
+      name: 'sidebar.footer.action',
+      id: 'extensions',
+      locale: NS,
+      store,
+    }, ExtensionFooter)
+  })
+
+  ctx.slots.inject('shell.overlay', () => {
+    if (ctx.slots.spec('shell.surface') !== undefined) return () => {}
+    return ctx.slots.register({
+      name: 'shell.overlay',
+      id: 'extensions',
+      locale: NS,
+      store,
+      inject: () => ({ loadCatalog }),
+    }, ExtensionOverlay)
+  })
 }
