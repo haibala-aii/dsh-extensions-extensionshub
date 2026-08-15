@@ -1,4 +1,4 @@
-# @haibala/dsh-extensions-extensionshub
+# @haibala-aii/dsh-extensions-extensionshub
 
 [English](README.md) | 中文
 
@@ -38,4 +38,4 @@ dsh plugin --profile web add github:haibala-aii/dsh-extensions-extensionshub
 
 ## 许可证
 
-MIT。Copyright (c) 2026 haibala / haibala-aii.
+MIT。Copyright (c) 2026 haibala-aii.
