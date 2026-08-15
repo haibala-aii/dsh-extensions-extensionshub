@@ -1,5 +1,5 @@
 {
-  "name": "@haibala/dsh-extensions-extensionshub",
+  "name": "@haibala-aii/dsh-extensions-extensionshub",
   "version": "0.2.0",
   "description": "Haibala DeepSeek Harness extension center: sidebar nav plus a GitHub plugin catalog",
   "license": "MIT",
