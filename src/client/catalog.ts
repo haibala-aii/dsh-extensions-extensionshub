@@ -34,10 +34,10 @@ const MIRROR_SEARCH = `https://ghfast.top/${GITHUB_SEARCH}`
 /** Curated rows used when both GitHub endpoints fail. */
 export const FALLBACK_ITEMS: readonly CatalogItem[] = [
   {
-    id: 'haibala-aii/dsh-haibala-ui-extensions',
-    name: '@haibala/dsh-ui-extensions',
+    id: 'haibala-aii/dsh-extensions-extensionshub',
+    name: '@haibala/dsh-extensions-extensionshub',
     description: 'Haibala sidebar extension center that lists GitHub dsh-plugin repositories.',
-    repo: 'haibala-aii/dsh-haibala-ui-extensions',
+    repo: 'haibala-aii/dsh-extensions-extensionshub',
   },
   {
     id: 'haibala-aii/dsh-extensions-remotelink',
