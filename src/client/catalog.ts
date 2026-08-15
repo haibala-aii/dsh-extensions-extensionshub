@@ -35,13 +35,13 @@ const MIRROR_SEARCH = `https://ghfast.top/${GITHUB_SEARCH}`
 export const FALLBACK_ITEMS: readonly CatalogItem[] = [
   {
     id: 'haibala-aii/dsh-extensions-extensionshub',
-    name: '@haibala/dsh-extensions-extensionshub',
+    name: '@haibala-aii/dsh-extensions-extensionshub',
     description: 'Haibala sidebar extension center that lists GitHub dsh-plugin repositories.',
     repo: 'haibala-aii/dsh-extensions-extensionshub',
   },
   {
     id: 'haibala-aii/dsh-extensions-remotelink',
-    name: '@haibala/dsh-extensions-remotelink',
+    name: '@haibala-aii/dsh-extensions-remotelink',
     description: 'Haibala mobile remote control: scan-to-pair QR and a phone surface at /m.',
     repo: 'haibala-aii/dsh-extensions-remotelink',
   },
