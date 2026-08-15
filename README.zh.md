@@ -1,4 +1,4 @@
-# @haibala/dsh-ui-extensions
+# @haibala/dsh-extensions-extensionshub
 
 [English](README.md) | 中文
 
@@ -7,12 +7,12 @@ Haibala 的 DeepSeek Harness Web 插件：列出打了 [`dsh-plugin`](https://gi
 ## 安装
 
 ```sh
-dsh plugin --profile web add github:haibala-aii/dsh-haibala-ui-extensions
+dsh plugin --profile web add github:haibala-aii/dsh-extensions-extensionshub
 ```
 
 添加成功后重启 `dsh web`（或桌面壳）。本仓库带有预构建的 `lib/`，首次安装不需要在 profile 里写 pnpm `allowBuilds`。
 
-旧仓库名 `haibala-aii/dsh-ui-extensions` 会重定向到这里。
+旧仓库名 `haibala-aii/dsh-haibala-ui-extensions` 会重定向到这里。
 
 ## 出现在哪
 
