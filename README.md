@@ -1,4 +1,4 @@
-# @haibala/dsh-ui-extensions
+# @haibala/dsh-extensions-extensionshub
 
 English | [中文](README.zh.md)
 
@@ -7,12 +7,12 @@ Haibala DeepSeek Harness web plugin that lists GitHub repositories tagged [`dsh-
 ## Install
 
 ```sh
-dsh plugin --profile web add github:haibala-aii/dsh-haibala-ui-extensions
+dsh plugin --profile web add github:haibala-aii/dsh-extensions-extensionshub
 ```
 
 Restart `dsh web` (or the desktop shell) after the add succeeds. This repository ships prebuilt `lib/`, so the first install does not need a pnpm `allowBuilds` entry.
 
-The previous repository name `haibala-aii/dsh-ui-extensions` redirects here.
+The previous repository name `haibala-aii/dsh-haibala-ui-extensions` redirects here.
 
 ## Where it appears
 
