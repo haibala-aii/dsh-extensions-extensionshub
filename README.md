@@ -1,16 +1,18 @@
-# dsh-ui-extensions
+# @haibala/dsh-ui-extensions
 
 English | [中文](README.zh.md)
 
-A DeepSeek Harness web plugin that lists GitHub repositories tagged [`dsh-plugin`](https://github.com/topics/dsh-plugin). The page copies an official install command; it does not run `dsh plugin add` inside the browser.
+Haibala DeepSeek Harness web plugin that lists GitHub repositories tagged [`dsh-plugin`](https://github.com/topics/dsh-plugin). The page copies an official install command; it does not run `dsh plugin add` inside the browser.
 
 ## Install
 
 ```sh
-dsh plugin --profile web add github:haibara757/dsh-ui-extensions
+dsh plugin --profile web add github:haibara757/dsh-haibala-ui-extensions
 ```
 
 Restart `dsh web` (or the desktop shell) after the add succeeds. This repository ships prebuilt `lib/`, so the first install does not need a pnpm `allowBuilds` entry.
+
+The previous repository name `haibara757/dsh-ui-extensions` redirects here.
 
 ## Where it appears
 
@@ -36,4 +38,4 @@ Stock DeepSeek Harness `0.1.0-rc.5` has the official seats, so the GitHub instal
 
 ## License
 
-MIT
+MIT. Copyright (c) 2026 haibala / haibara757.

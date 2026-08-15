@@ -1,7 +1,7 @@
 {
-  "name": "dsh-ui-extensions",
-  "version": "0.1.0",
-  "description": "DeepSeek Harness extension center: sidebar nav plus a GitHub plugin catalog",
+  "name": "@haibala/dsh-ui-extensions",
+  "version": "0.2.0",
+  "description": "Haibala DeepSeek Harness extension center: sidebar nav plus a GitHub plugin catalog",
   "license": "MIT",
   "type": "module",
   "main": "lib/index.js",
@@ -37,17 +37,18 @@
     }
   },
   "keywords": [
+    "haibala",
     "dsh-plugin",
     "deepseek-harness"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/haibara757/dsh-ui-extensions.git"
+    "url": "git+https://github.com/haibara757/dsh-haibala-ui-extensions.git"
   },
   "bugs": {
-    "url": "https://github.com/haibara757/dsh-ui-extensions/issues"
+    "url": "https://github.com/haibara757/dsh-haibala-ui-extensions/issues"
   },
-  "homepage": "https://github.com/haibara757/dsh-ui-extensions#readme",
+  "homepage": "https://github.com/haibara757/dsh-haibala-ui-extensions#readme",
   "peerDependencies": {
     "@deepseek-ai/cordis": "*",
     "@deepseek-ai/dsh-client-locale": "*",

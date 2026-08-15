@@ -34,6 +34,18 @@ const MIRROR_SEARCH = `https://ghfast.top/${GITHUB_SEARCH}`
 /** Curated rows used when both GitHub endpoints fail. */
 export const FALLBACK_ITEMS: readonly CatalogItem[] = [
   {
+    id: 'haibara757/dsh-haibala-ui-extensions',
+    name: '@haibala/dsh-ui-extensions',
+    description: 'Haibala sidebar extension center that lists GitHub dsh-plugin repositories.',
+    repo: 'haibara757/dsh-haibala-ui-extensions',
+  },
+  {
+    id: 'haibara757/dsh-haibala-remote-web-ui',
+    name: '@haibala/dsh-remote-web-ui',
+    description: 'Haibala mobile remote control: scan-to-pair QR and a phone surface at /m.',
+    repo: 'haibara757/dsh-haibala-remote-web-ui',
+  },
+  {
     id: 'whyihaveyou/dsh-suite',
     name: 'dsh-suite',
     description: 'Living plugin directory plus an in-app store and scaffolder.',
