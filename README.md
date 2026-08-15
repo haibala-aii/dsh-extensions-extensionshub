@@ -1,4 +1,4 @@
-# @haibala/dsh-extensions-extensionshub
+# @haibala-aii/dsh-extensions-extensionshub
 
 English | [中文](README.zh.md)
 
@@ -38,4 +38,4 @@ Stock DeepSeek Harness `0.1.0-rc.5` has the official seats, so the GitHub instal
 
 ## License
 
-MIT. Copyright (c) 2026 haibala / haibala-aii.
+MIT. Copyright (c) 2026 haibala-aii.
